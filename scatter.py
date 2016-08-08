@@ -73,10 +73,13 @@ if __name__ == '__main__':
                 amp.extend(y1)
                 amp2.extend(y2)
 
-    plt.scatter(amp, t, color='blue')
-    plt.scatter(amp2, t, color='red')
-    plt.xlabel("Amplitudes")
-    plt.ylabel("Time Resolution")
-    plt.title("Time Resolution vs. Amplitude")
+    amp = map(abs,amp)
+    amp2 = map(abs,amp2)
+
+    plt.plot(t, amp, 'ro')
+    plt.plot(t, amp2, 'bo')
+    plt.xlabel("Time Resolution")
+    plt.ylabel("Amplitude")
+    plt.title("Amplitude vs. Time Resolution")
 
 plt.show()
